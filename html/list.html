@@ -1,0 +1,37 @@
+<div class="btn-group btn-group-lg">
+    <a href="#/home" class="btn btn-default" ng-click="makeActive()">
+        <i class="fa fa-table"></i>
+    </a>
+    <a href="#/list" class="btn btn-danger" ng-click="makeActive()">
+        <i class="fa fa-list-ul"></i>
+    </a>
+</div>
+<div class="search">
+    <input type="search"  class="form-control" placeholder="Search" ng-model="search" />
+</div>
+<div class="filter">
+    <select class="form-control" ng-model="sort">
+        <option value="ID">Order By (ID)</option>
+        <option value="First">First Name</option>
+        <option value="Last">Last Name</option>
+        <option value="Address">Address</option>
+        <option value="City">City</option>
+        <option value="Zip">Zip</option>
+    </select>
+</div>
+<div class="way">
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="true" ng-model="way">
+            Desc
+        </label>
+    </div>
+</div>
+<ul class="list-group">
+    <li class="list-group-item" ng-repeat="user in users | filter:search | orderBy:sort:way">
+        <h4 class="list-group-item-heading">
+            {{user.First}} {{user.Last}}
+        </h4>
+        <p class="list-group-item-text">{{user.Address}}, {{user.City}},  {{user.Zip}}</p>
+    </li>
+</ul>

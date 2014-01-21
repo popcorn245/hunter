@@ -1,0 +1,22 @@
+CACHE MANIFEST
+
+# HTML
+index.html
+html/home.html
+html/list.html
+
+# CSS
+css/master.css
+
+# FONT
+fonts/fontawesome-webfont.ttf
+fonts/glyphicons-halflings-regular.ttf
+
+# JS
+js/hunter.js
+
+# IMG
+img/logo.png
+
+NETWORK:
+*

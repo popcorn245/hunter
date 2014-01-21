@@ -1,0 +1,47 @@
+<div class="btn-group btn-group-lg">
+    <a href="#/home" class="btn btn-danger" ng-click="makeActive()">
+        <i class="fa fa-table"></i>
+    </a>
+    <a href="#/list" class="btn btn-default" ng-click="makeActive()">
+        <i class="fa fa-list-ul"></i>
+    </a>
+</div>
+<div class="search">
+    <input type="search"  class="form-control" placeholder="Search" ng-model="search" />
+</div>
+<div class="filter">
+    <select class="form-control" ng-model="sort">
+        <option value="ID">Order By (ID)</option>
+        <option value="First">First Name</option>
+        <option value="Last">Last Name</option>
+        <option value="Address">Address</option>
+        <option value="City">City</option>
+        <option value="Zip">Zip</option>
+    </select>
+</div>
+<div class="way">
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="true" ng-model="way">
+            Desc
+        </label>
+    </div>
+</div>
+<div class="well well-sm">
+    <table class="table table-striped">
+        <tr>
+            <td><strong>#</strong></td>
+            <td><strong>Name</strong></td>
+            <td><strong>Address</strong></td>
+            <td><strong>City</strong></td>
+            <td><strong>Zip</strong></td>
+        </tr>
+        <tr ng-repeat="user in users | filter:search | orderBy:sort:way">
+            <td>{{user.ID}}</td>
+            <td>{{user.First}} {{user.Last}}</td>
+            <td>{{user.Address}}</td>
+            <td>{{user.City}}</td>
+            <td>{{user.Zip}}</td>
+        </tr>
+    </table>
+</div>
